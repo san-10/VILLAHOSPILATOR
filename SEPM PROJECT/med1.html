@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+:root{
+    --primary-color: #0C76E9;
+}
+
+body {
+    background: #CBF8F9;
+    margin: 0;
+    font-family:'Poppins';
+}
+.navbar {
+    background: #F8F9F9;
+    padding: 1em;
+
+    .logo {
+        text-decoration: none;
+        font-weight: bold;
+        color: #2E4053;
+        font-size: 1.4em;
+
+        span {
+           color: var(--primary-color);
+
+        }
+    }
+} 
+nav {
+    display: none;
+}
+
+.container {
+    display: flex;
+    place-content: space-between;
+}
+
+    .mobile-menu {
+    cursor: pointer;
+    }
+
+
+a {
+color: #04c56b;
+}
+
+
+iframe {
+    width: 100%;
+    height: 300px;
+}
+
+nav.menu-btn {
+    display: block;
+}
+
+nav {
+    position: fixed;
+    z-index: 999;
+    width: 66%;
+    right: 0;
+    top: 0;
+    background: #20272E;
+    height: 100vh;
+    padding: 1em;
+
+    ul.primary-nav {
+        margin-top: 5em;
+    }
+
+    li {
+        
+        a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: .5em;
+            font-size: 1.3em;
+            text-align: right;
+
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.mobile-menu-exit {
+    float: right;
+    margin: .5em;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .mobile-menu, .mobile-menu-exit {
+        display: none;
+    }
+
+    .navbar .container {
+        display: grid;
+        grid-template-columns: 180px auto;
+        justify-content: unset;
+    }
+
+    .navbar nav {
+        display: flex;
+        justify-content: space-between;
+        background: none;
+        position: unset;
+        height: auto;
+        width: 100%;
+        padding: 0;
+
+        ul {
+            display: flex;
+        }
+
+        a {
+            color: black;
+            font-size: 1em;
+            padding: .1em 1em;
+        }
+
+        ul.primary-nav {
+            margin: 0;
+        }
+
+        li.current a {
+            font-weight: bold;
+        }
+        li.go-contact a {
+            color: var(--primary-color);
+            border: 3px solid var(--primary-color);
+            font-weight: bold;
+            border-radius: 5em;
+            margin-top: -.2em;
+
+            &:hover {
+                background: var(--primary-color);
+                color: white;
+            }
+        }
+        li.go-lsi a{
+            color: #F4D03F;
+            border: 3px solid #F4D03F;
+            font-weight: bold;
+            border-radius: 5em;
+            margin-top: -.2em;
+
+            &:hover {
+                background: #F4D03F;
+                color: white;
+            }
+        }
+    }
+}
+
+
+
+  </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VILLAHOSPILATOR</title>
+  <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body>
+<div class="navbar">
+  <div class="container">
+    <a href="INDEX.html">VILLA<span>HOSPILATOR</span></a>
+     <img id="mobile-cta" class="mobile-menu" src="images/menu.svg" alt="OPEN NAVIGATION">
+    <nav>
+      <img id="mobile-exit" class="mobile-menu-exit"src="images/exit.svg" alt="CLOSE NAVIGATION">
+      <ul class="primary-nav">
+        <li class="current"><a href="vision.html"><span>OUR VISION</span></a></li>  
+        <li><a href="service.html"><span>OUR SERVICES</span></a></li> 
+        <li><a href="notice.html"><span>NOTIFICATIONS</span></a></li> 
+        <li><a href="sos.html"><span>SOS</span></a></li> 
+        <li><a href="med.html"><span>PHARMACY</span></a></li> 
+
+      </ul>
+      <ul class="secondary-nav">
+        <li class="go-contact"><a href="support.html"><span>SUPPORT</span></a></li>  
+        <li class="go-lsi"><a href="login.html"><span>LOGIN / SIGNUP</span></a></li> 
+      </ul>
+    </nav>
+
+  </div>
+</div>
+<nav>
+  <ul class="secondary-nav">
+    <li class="go-med0"><a href="med.html"><span>GO BACK TO MAIN OPTIONS</span></a></li>  
+  </ul>
+</nav>
+<h1>ENTER THE MEDICINE TO BE SEARCHED FOR </h1>
+
+<label for="med_code">MEDICINE CODE:</label>
+<input type="text" id="med_code" name="med_code" pattern="[A-Za-z]{3}" title="THE MEDICINE SEARCH CODE"><br><br>
+<input type="submit">
+
+<p><strong>Note:</strong>PLEASE ENTER A VALID MEDICINE CODE </p>
+
+if (med_code == med_list)
+{
+  greeting = "MEDICINE AVAILABLE";
+} else {
+  greeting = "MEDICINE UNAVAILABLE PLEASE ORDER";
+}
+
+</body>
+</html>
